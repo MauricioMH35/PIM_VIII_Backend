@@ -39,7 +39,7 @@ namespace PIM_VIII.Controllers {
         [HttpGet("{id}")]
         public async Task<ActionResult<Endereco>> EncontrarPorId([FromRoute] int id) {
             Endereco endereco = await repository.EncontrarPorId(id);
-            if (endereco.Equals(null)) {
+            if (endereco == null) {
                 return NotFound($"Não foi possivel encontrar o endereço pelo id {id}.");
             }
 
@@ -50,7 +50,7 @@ namespace PIM_VIII.Controllers {
         public async Task<ActionResult<Endereco>> PesquisarCep([FromRoute] string cep,
             [FromRoute] int numero) {
             ViaCep viaCep = await viaCepRepository.PesquisaCep(cep);
-            if (viaCep.Equals(null)) {
+            if (viaCep == null) {
                 return NotFound($"Não foi possivel encontrar o endereço via cep {cep}.");
             }
 

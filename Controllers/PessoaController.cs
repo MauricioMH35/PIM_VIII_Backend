@@ -28,7 +28,7 @@ namespace PIM_VIII.Controllers {
         [HttpGet("{id}")]
         public async Task<ActionResult<Pessoa>> EncontrarPorId(int id) {
             Pessoa pessoa = await repository.EncontrarPorId(id);
-            if (pessoa.Equals(null)) {
+            if (pessoa == null) {
                 return NotFound($"Não foi possivel encontrar a pessoa com o id {id}.");
             }
 
@@ -38,7 +38,7 @@ namespace PIM_VIII.Controllers {
         [HttpGet("cpf/{cpf}")]
         public async Task<ActionResult<Pessoa>> EncontrarPorCpf(long cpf) {
             Pessoa pessoa = await repository.EncontrarPorCpf(cpf);
-            if (pessoa.Equals(null)) {
+            if (pessoa == null) {
                 return NotFound($"Não foi possivel encontrar a pessoa com o CPF {cpf}.");
             }
 

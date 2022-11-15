@@ -37,7 +37,7 @@ namespace PIM_VIII.Controllers {
         [HttpGet("numero/{numero}")]
         public async Task<ActionResult<Telefone>> EncontrarPorNumero([FromRoute] int numero) {
             Telefone telefone = await repository.EncontrarPorNumero(numero);
-            if (telefone.Equals(null)) { 
+            if (telefone == null) { 
                 return NotFound($"Não foi possivel encontrar o telefone com o número {numero}.");
             }
 
@@ -47,7 +47,7 @@ namespace PIM_VIII.Controllers {
         [HttpGet("{id}")]
         public async Task<ActionResult<Telefone>> EncontrarPorId([FromRoute] int id) { 
             Telefone telefone = await repository.EncontrarPorId(id);
-            if (telefone.Equals(null)) { 
+            if (telefone == null) { 
                 return NotFound($"Não foi possivel encontrar o telefone com o id {id}.");
             }
 

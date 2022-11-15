@@ -17,7 +17,7 @@ namespace PIM_VIII.Controllers {
         [HttpGet]
         public async Task<ActionResult<List<TipoTelefone>>> EncontrarTodos() {
             List<TipoTelefone> telefones = await repository.EncontrarTodos();
-            if (telefones.Equals(null)) {
+            if (telefones == null) {
                 return NotFound($"Não foi possivel encontrar tipos de telefone.");
             }
 
