@@ -55,7 +55,7 @@ namespace PIM_VIII.Controllers {
             return Ok("Telefone atualizado com sucesso.");
         }
 
-        [HttpPut("{id}")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<string>> Remover([FromRoute] int id) {
             bool resultado = await repository.Remover(id);
             if (!resultado) {
