@@ -43,7 +43,7 @@ namespace PIM_VIII.Repositories {
                 return false;
             }
 
-            encontrado.logradouro = encontrado.logradouro != endereco.logradouro && endereco.logradouro != null ? endereco.logradouro : encontrado.logradour;
+            encontrado.logradouro = encontrado.logradouro != endereco.logradouro && endereco.logradouro != null ? endereco.logradouro : encontrado.logradouro;
             encontrado.numero = encontrado.numero != endereco.numero ? endereco.numero : encontrado.numero;
             encontrado.cep = encontrado.cep != endereco.cep && endereco.cep != null ? endereco.cep : encontrado.cep;
             encontrado.bairro = endereco.bairro != endereco.bairro && endereco.bairro != null ? endereco.bairro : encontrado.bairro;
