@@ -1,34 +1,35 @@
-﻿# docker-compose up -d
+﻿# up this docker document
+# docker-compose up -d
 # docker-compose up --build
 # docker-compose down
 
 version: '3.6'
 
 services:
-  mysql_server:
+  unip_mysql:
     image: mysql:5.7
     restart: always
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: unip_pwd
-      MYSQL_DATABASE: DB_PIM_VIII
+      MYSQL_DATABASE: DB_UNIP
     volumes:
-      - mysql_volume:/var/lib/mysql:rw
+      - unip_volume:/var/lib/mysql:rw
     networks:
-      - mysql_network
+      - unip_network
 
-  adminer:
+  unip_adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
     networks:
-      - mysql_network
+      - unip_network
 
 networks:
-  mysql_network:
+  unip_network:
     driver: bridge
 
 volumes:
-  mysql_volume:
+  unip_volume:
