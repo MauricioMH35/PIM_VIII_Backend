@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using PIM_VIII.Models.Builders;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PIM_VIII.Models {
 
@@ -12,6 +13,7 @@ namespace PIM_VIII.Models {
         public TipoTelefone? tipo { get; set; }
 
         private Telefone() {
+
         }
 
         public Telefone(int id, int ddd, int numero, int? tipoId, TipoTelefone tipo) {
@@ -20,6 +22,10 @@ namespace PIM_VIII.Models {
             this.numero = numero;
             this.tipoId = tipoId;
             this.tipo = tipo;
+        }
+
+        public static TelefoneBuilder Builder() {
+            return new TelefoneBuilder();
         }
 
     }
