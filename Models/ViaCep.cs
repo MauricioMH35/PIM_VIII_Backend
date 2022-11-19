@@ -1,4 +1,6 @@
-﻿namespace PIM_VIII.Models {
+﻿using PIM_VIII.Models.Builders;
+
+namespace PIM_VIII.Models {
 
     public class ViaCep {
 
@@ -37,6 +39,10 @@
                 localidade,
                 uf
             );
+        }
+
+        public static ViaCepBuilder Builder() {
+            return new ViaCepBuilder(); 
         }
 
     }
