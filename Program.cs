@@ -42,6 +42,9 @@ namespace PIM_VIII {
             // Injeção de dependência do repositorio de tipo via cep
             builder.Services.AddScoped<IViaCepRepository, ViaCepRepository>();
 
+            // Injeção de dependência do repositorio de tipo pessoa telefone
+            builder.Services.AddScoped<IPessoaTelefoneRepository, PessoaTelefoneRepository>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
