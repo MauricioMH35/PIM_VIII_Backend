@@ -22,9 +22,9 @@ namespace PIM_VIII.Repositories {
         }
 
         public async Task<bool> Adicionar(TipoTelefone tipoTelefone) {
-            TipoTelefone encontrado = await context.TipoTelefones
+            TipoTelefone? encontrado = await context.TipoTelefones
                 .FirstOrDefaultAsync(x => x.tipo == tipoTelefone.tipo);
-            if (!encontrado.Equals(null)) {
+            if (encontrado != null) {
                 return false;
             }
 
