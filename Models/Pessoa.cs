@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using PIM_VIII.Models.Builders;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PIM_VIII.Models {
     
@@ -20,6 +21,10 @@ namespace PIM_VIII.Models {
             this.cpf = cpf;
             this.enderecoId = enderecoId;
             this.endereco = endereco;
+        }
+
+        public static PessoaBuilder Builder() {
+            return new PessoaBuilder();
         }
 
     }
